@@ -1,0 +1,16 @@
+# Ignore the site output
+_site/
+.bundle/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+
+# Ignore configuration
+.env
+*.swp
+*.swo
+
+# Ignore OS-specific or editor-specific files
+.DS_Store
+Thumbs.db
