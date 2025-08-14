@@ -1,2 +1,3 @@
 # Aron22563.github.io
-My personal github pages website
+
+My github pages website, here i try to learn jekyll and static website building
