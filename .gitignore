@@ -1,16 +1,23 @@
-# Ignore the site output
 _site/
-.bundle/
-.sass-cache/
+assets/js/dist/*
 .jekyll-cache/
-.jekyll-metadata
+.jekyll-metadata/
+.sass-cache/
+.bundle/
 
 
-# Ignore configuration
-.env
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+Gemfile.lock  
+
+DS_Store
+Thumbs.db
 *.swp
 *.swo
+.idea/
+.vscode/
+*.bak
 
-# Ignore OS-specific or editor-specific files
-.DS_Store
-Thumbs.db
+env
