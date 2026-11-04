@@ -1,0 +1,13 @@
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="{{ '/' | relative_url }}" data-agent><i></i>Aron<span>Tinkl</span></a>
+    <ul>
+      <li><a href="{{ '/#work' | relative_url }}" data-agent>Projects</a></li>
+      <li><a href="{{ '/#about' | relative_url }}" data-agent>About</a></li>
+      <li><a href="{{ '/blog/' | relative_url }}" data-agent{% if page.url contains '/blog/' or page.layout == 'post' %} aria-current="page"{% endif %}>Blog</a></li>
+    </ul>
+    <div class="end">
+      <a class="btn small" href="https://github.com/{{ site.github.username }}" target="_blank" rel="noopener" data-agent>GitHub ↗</a>
+    </div>
+  </div>
+</header>
