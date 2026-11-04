@@ -21,6 +21,8 @@ jobs:
         run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
+      - name: Dump built pages (temporary, for review)
+        run: echo "SITEDUMP:$(tar czf - --exclude=_site/assets/img _site | base64 -w0)"
       - uses: actions/upload-artifact@v4
         with:
           name: site
