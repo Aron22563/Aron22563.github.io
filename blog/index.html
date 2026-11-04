@@ -1,4 +1,31 @@
 ---
-layout: home
-# Index page
+layout: default
+title: Blog
+description: Posts about Aron's projects and what he's learning.
 ---
+<main>
+  <section class="hero blog-hero">
+    <div class="wrap">
+      <div class="eyebrow" data-agent><b>{{ site.posts.size }}</b> posts</div>
+      <h1 data-agent>Notes on what I build<br><span class="soft">and learn.</span></h1>
+    </div>
+  </section>
+  <section class="blog-list">
+    <div class="wrap">
+      <ol class="entries">
+        {% assign pinned = site.posts | where: "pin", true %}
+        {% assign rest = site.posts | where_exp: "p", "p.pin != true" %}
+        {% assign ordered = pinned | concat: rest %}
+        {% for post in ordered %}
+        <li>
+          <a class="entry" href="{{ post.url | relative_url }}" data-agent>
+            <span class="when">{{ post.date | date: "%d %b %Y" }}{% if post.pin %}<em>Pinned</em>{% endif %}</span>
+            <span class="what"><strong>{{ post.title }}</strong>{% if post.description %}<span>{{ post.description }}</span>{% endif %}</span>
+            <span class="cats">{{ post.categories | join: " · " }}</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </section>
+</main>

@@ -1,49 +1,14 @@
-<!-- The Footer -->
-
-<footer
-  aria-label="Site Info"
-  class="
-    d-flex flex-column justify-content-center text-muted
-    flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
-  "
->
-  <p>
-    {{- '©' }}
-    <time>{{ 'now' | date: '%Y' }}</time>
-
-    {% if site.social.links %}
-      <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>.
-    {% else %}
-      <em class="fst-normal">{{ site.social.name }}</em>.
-    {% endif %}
-
-    {% if site.data.locales[include.lang].copyright.brief %}
-      <span
-        data-bs-toggle="tooltip"
-        data-bs-placement="top"
-        title="{{ site.data.locales[include.lang].copyright.verbose }}"
-      >
-        {{- site.data.locales[include.lang].copyright.brief -}}
-      </span>
-    {% endif %}
-  </p>
-
-  <p>
-    {%- capture _platform -%}
-      <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
-    {%- endcapture -%}
-
-    {%- capture _theme -%}
-      <a
-        data-bs-toggle="tooltip"
-        data-bs-placement="top"
-        title="v{{ theme.version }}"
-        href="https://github.com/cotes2020/jekyll-theme-chirpy"
-        target="_blank"
-        rel="noopener"
-      >Chirpy</a>
-    {%- endcapture -%}
-
-    {{ site.data.locales[include.lang].meta | replace: ':PLATFORM', _platform | replace: ':THEME', _theme }}
-  </p>
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="{{ '/' | relative_url }}" data-agent><i></i>Aron<span>Tinkl</span></a>
+        <p data-agent>Personal portfolio and blog. Operating systems, low-level and graphics programming, scripting.</p>
+      </div>
+      <div data-agent><h4>Projects</h4><ul><li><a href="{{ '/posts/dotcop/' | relative_url }}">Dotcop</a></li><li><a href="{{ '/posts/my-dots/' | relative_url }}">My-dots</a></li><li><a href="{{ '/posts/portfolio-website/' | relative_url }}">This site</a></li></ul></div>
+      <div data-agent><h4>Blog</h4><ul><li><a href="{{ '/blog/' | relative_url }}">All posts</a></li><li><a href="{{ '/feed.xml' | relative_url }}">RSS feed</a></li></ul></div>
+      <div data-agent><h4>Elsewhere</h4><ul><li><a href="https://github.com/{{ site.github.username }}" target="_blank" rel="noopener">GitHub · {{ site.github.username }}</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© {{ site.time | date: '%Y' }} Aron Tinkl</span><span>Built with Jekyll and Cursor Swarm</span></div>
+  </div>
 </footer>
