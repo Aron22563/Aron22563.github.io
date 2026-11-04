@@ -16,11 +16,10 @@
   let W, H, DPR, flocks = [], agents = [], notes = [], drawn = 0, paused = reduce, ruler = 0, last = performance.now();
   const mouse = { x:-1e4, y:-1e4, t:0 };
   let level = 2;
-  const AUTO = () => Math.round(Math.max(16, Math.min(44, W*H/22000)) / 4) * 4;
   const LEVELS = [
     { name:'Off' },
-    { name:'Calm', n:() => 8, max:4, speed:55, ruler:false },
-    { name:'Full', n:AUTO, max:22, speed:95, ruler:true },
+    { name:'Calm', n:() => 4, max:4, speed:55, ruler:false },
+    { name:'Full', n:() => 8, max:22, speed:95, ruler:true },
     { name:'Busy', n:() => 96, max:40, speed:115, ruler:true }
   ];
   const LV = () => LEVELS[level];
