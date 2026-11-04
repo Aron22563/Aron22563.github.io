@@ -12,7 +12,8 @@
 <link rel="stylesheet" href="{{ '/assets/css/swarm.css' | relative_url }}">
 {% feed_meta %}
 </head>
-<body{% if page.swarm != nil %} data-swarm="{{ page.swarm }}"{% endif %}>
+{% assign swarm = page.swarm | default: layout.swarm %}
+<body{% if swarm != nil %} data-swarm="{{ swarm }}"{% endif %}>
 {% include nav.html %}
 {{ content }}
 {% include footer.html %}
